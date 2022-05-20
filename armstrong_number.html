@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armastrong Number Check</title>
+</head>
+<script>
+    function arms() {
+        let num,rem,arm=0;
+        num=Number(document.getElementById("t1").value);
+        temp=num;
+        
+        while(temp>0)
+        {
+            rem=temp%10;
+            temp=parseInt(temp/10);
+            arm=arm+rem*rem*rem;
+        }
+        if(arm==num)
+        {
+            document.getElementById("print").innerHTML=num+" is a Armstrong Number";
+        }
+        else
+        {
+            document.getElementById("print").innerHTML=num+" is not a Armstrong Number";
+
+        }
+    }
+</script>
+<body>
+    <form action="">
+        Enter your Number : <input type="text" name="txt1" id="t1">
+        <h2 id="print">Show the result here!</h2>
+        <input type="button" value="Check" onclick="arms()">
+        <input type="reset" value="Refresh" onclick='document.getElementById("print").innerHTML="Show the result here!"'>
+    </form>
+</body>
+</html>
